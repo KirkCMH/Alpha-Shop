@@ -400,7 +400,6 @@ h1 {
               grid-area: address;
             }
           }
-          
         }
       }
     }
@@ -482,7 +481,34 @@ form {
       &:invalid {
         color: #747474;
       }
+    }
 
+    .delivery {
+      position: relative;
+      border: 1px solid $pale-gray;
+      margin-top: 24px;
+      border-radius: 5px;
+      padding: 11px 20px;
+      cursor: pointer;
+
+      > label {
+        padding-left: 20px;
+        // outline: 1px solid red;
+        font-size: 14px;
+        width: 100%;
+      }
+
+      p.work-day{
+        margin-top: 2px;
+      }
+
+      p.price {
+        position: absolute;
+        top: 13px;
+        right: 20px;
+        font-size: 12px;
+        line-height: 16px;
+      }
     }
   }
 }

@@ -927,4 +927,27 @@ form .form-row select {
 }
 form .form-row select:invalid {
   color: #747474;
+}
+form .form-row .delivery {
+  position: relative;
+  border: 1px solid #F0F0F5;
+  margin-top: 24px;
+  border-radius: 5px;
+  padding: 11px 20px;
+  cursor: pointer;
+}
+form .form-row .delivery > label {
+  padding-left: 20px;
+  font-size: 14px;
+  width: 100%;
+}
+form .form-row .delivery p.work-day {
+  margin-top: 2px;
+}
+form .form-row .delivery p.price {
+  position: absolute;
+  top: 13px;
+  right: 20px;
+  font-size: 12px;
+  line-height: 16px;
 }/*# sourceMappingURL=main.css.map */
