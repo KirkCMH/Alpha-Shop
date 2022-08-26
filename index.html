@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ALPHA SHOP</title>
+  <link rel="stylesheet" href="dist/main.css">
+</head>
+
+<body>
+<header>
+  <nav>
+
+  </nav>
+</header>
+<main id="main-content">
+  <section class="stepper">
+    <h1 class="stepper-title">結帳</h1>
+    <div id="step-control" class="stepper-panel">
+      <div class="container stepper-container">
+        <div class="step active">
+          <div class="circle-container"></div>
+        </div>
+        <div class="step">
+          <div class="circle-container"></div>
+          <span class="connect-line"></span>
+        </div>
+        <div class="step">
+          <div class="circle-container"></div>
+          <span class="connect-line"></span>
+        </div>
+      </div>
+    </div>
+    <div class="form-panel">
+      <div class="container form-container">
+        <form id="a-form">
+          <div class="form-content">
+            <div class="part">
+              <h1>寄送地址</h1>
+              <div class="form-row">
+                <label>稱謂</label>
+                <div class="select-wrapper">
+                  <select name="a-type" id="a-type" required>
+                    <option value="Sir">先生</option>
+                    <option value="Lady">女士</option>
+                  </select>
+                </div>
+              </div>  
+              <div class="form-row">
+                <label for="">姓名</label>
+                <input id="customer-name" type="text" placeholder="請輸入姓名">
+              </div>
+              <div class="form-row">
+                <label for="">電話</label>
+                <input id="phone-number" type="text" placeholder="請輸入行動電話">
+              </div>
+              <div class="form-row">
+                <label for="">Email</label>
+                <input id="email" type="text" placeholder="請輸入電子郵件">
+              </div>
+              <div class="form-row">
+                <label>縣市</label>
+                <div class="select-wrapper">
+                  <select name="a-type" id="a-type" required>
+                    <option value="" disabled selected>請選擇縣市</option>
+                    <option value="">基隆市</option>
+                    <option value="">臺北市</option>
+                    <option value="">新北市</option>
+                    <option value="">桃園市</option>
+                    <option value="">臺中市</option>
+                    <option value="">臺南市</option>
+                    <option value="">高雄市</option>
+                  </select>
+                </div>
+              </div>
+              <div class="form-row">
+                <label for="">地址</label><input id="address" type="text" placeholder="請輸入地址">
+              </div>
+            </div>
+
+            <div class="part">
+              <div class="form-row ">
+                <h1>運送方式</h1>
+                <div class="d-flex flex-column">
+                  <div class="d-flex align-items-center flex-row">
+                    <input name="delivery-normal" type="radio" value="normal" id="delivery-normal">
+                    <label for="delivery-normal">
+                      標準運送<p>免費</p>
+                      <p>約3 ~ 7 個工作天</p>
+                    </label>  
+                  </div>
+                  <div class="d-flex align-items-center flex-row">
+                    <input name="delivery-DHL" type="radio" value="DHL" id="delivery-DHL">
+                    <label for="delivery-DHL">
+                      DHL貨運<p>$500</p>
+                      <p>48小時送達</p>
+                    </label>  
+                  </div>
+                  
+                </div>
+              </div>    
+            </div>
+
+            <div class="part">
+              <h1>付款資訊</h1>
+              <div class="form-row">
+                <label for="">持卡人姓名</label>
+                <input id="card-owner" type="text" placeholder="張大帥"></div>
+              <div class="form-row">
+                <label for="">卡號</label>
+                <input id="card-number" type="text" placeholder="1111 2222 3333 4444"></div>
+              <div class="form-row">
+                <label for="">有效期限</label>
+                <input id="expire-date" type="text" placeholder="MM/YY">
+              </div>
+              <div class="form-row">
+                <label for="">CVC / CCV</label>
+                <input id="sercurity-code" type="text" placeholder="123">
+              </div>
+            </div>
+          </div>
+          <div id="btn-control" class="control-panel d-flex justify-content-end">
+            <button disabled class="btn">上一步</button>
+            <button class="btn btn-primary">下一步</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <section class="purchase">
+    <div id="product-panel">
+      <div class="container product-container">
+        <div class="product-card">
+          <div class="product-item">
+            <div class="product-img"><img src="/src/img/fit_jeans.png" alt="JEANS"></div>
+            <h5>破壞補丁修身牛仔褲</h5>
+            <div class="amount-controler">
+              <div class="circle"></div>
+              <p class="amount-number">1</p>
+              <div class="circle"></div>
+            </div>
+            <h5 class="price">$3,999</h5>
+          </div>
+
+          <div class="product-item">
+            <div class="product-img"><img src="/src/img/straight_jeans.png" alt="JEANS"></div>
+            <h5>刷色直筒牛仔褲</h5>
+            <div class="amount-controler">
+              <div class="circle"></div>
+              <p class="amount-number">1</p>
+              <div class="circle"></div>
+            </div>
+            <h5 class="price">$1,299</h5>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer-panel hidden">
+  <div class="container footer-container">
+
+  </div>
+</footer>
+
+  <script src="dist/bundle.js"></script>
+</body>
+
+</html>

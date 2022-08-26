@@ -1,0 +1,450 @@
+/* reset css */
+body {
+  margin: 0;
+  padding: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0px;
+  padding: 0px;
+}
+
+ul,
+ol,
+li {
+  list-style: none;
+  margin: 0px;
+  padding: 0px;
+}
+
+a,
+a:hover,
+a:focus {
+  text-decoration: none;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.btn,
+button,
+button:focus,
+input:focus,
+textarea:focus,
+select,
+select:focus,
+a:focus {
+  outline: 0px !important;
+}
+
+button {
+  background-color: transparent;
+  border: 0;
+  cursor: pointer;
+}
+
+button[disabled] {
+  pointer-events: none;
+}
+
+input {
+  padding: 0;
+}
+
+input:required {
+  box-shadow: none;
+}
+
+input:invalid {
+  box-shadow: none;
+}
+
+::-webkit-scrollbar {
+  /* make scrollbar transparent */
+  width: 0px;
+  background: transparent;
+}
+
+/* basic setting */
+// color,size
+$body-bg: #E5E5E5;
+$body-color: #18253d;
+$white: #fff;
+$font-color: #808080;
+$dark-gray: #4a4a4a;
+$light-gray: #AFB1BD;
+$pale-gray: #F0F0F5;
+$black: #2A2A2A;
+$pink: #F67599;
+
+$sizes: (
+  25: 25%,
+  50: 50%,
+  75: 75%,
+  100: 100%
+);
+
+/* 使用@each 產出css size設定 */
+@each $prop,
+$abbrev in (width: w, height: h) {
+
+  @each $num,
+  $val in $sizes {
+    .#{$abbrev}-#{$num} {
+      #{$prop}: $val;
+    }
+  }
+}
+
+// margin,padding,box-shadow
+$spacer: 1rem;
+$spacers: (
+  0: 0,
+  1: ($spacer * 0.25),
+  2: ($spacer * 0.5),
+  3: ($spacer * 0.75),
+  4: $spacer,
+  5: ($spacer * 1.25),
+  6: ($spacer * 1.5),
+  7: ($spacer * 1.75),
+  8: ($spacer * 2)
+);
+
+/* 使用@each 產出css spacer設定 */
+@each $prop,
+$abbrev in (margin: m, padding: p) {
+
+  @each $num,
+  $val in $spacers {
+    .#{$abbrev}-#{$num} {
+      #{$prop}: $val;
+    }
+
+    .#{$abbrev}t-#{$num} {
+      #{$prop}-top: $val;
+    }
+
+    .#{$abbrev}r-#{$num} {
+      #{$prop}-right: $val;
+    }
+
+    .#{$abbrev}b-#{$num} {
+      #{$prop}-bottom: $val;
+    }
+
+    .#{$abbrev}l-#{$num} {
+      #{$prop}-left: $val;
+    }
+
+    .#{$abbrev}x-#{$num} {
+      #{$prop}-left: $val;
+      #{$prop}-right: $val;
+    }
+
+    .#{$abbrev}y-#{$num} {
+      #{$prop}-top: $val;
+      #{$prop}-bottom: $val;
+    }
+  }
+}
+
+// 產生步驟數字 の function 
+@mixin getStepNums($num) {
+  @for $i from 1 through $num {
+    &:nth-child(#{$i}) .circle-container::after {
+      content: '#{$i}';
+    }
+  }
+}
+
+%standard-boxshadow {
+  box-shadow: 3px 0 13px 0 rgba(100, 112, 134, 0.1);
+}
+
+%input-style {
+  border: 1px solid $light-gray;
+  border-radius: 5px;
+  font-size: 5px;
+  padding: 0.5rem;
+
+  &:hover,
+  &:focus {
+    border-color: $dark-gray;
+  }
+}
+
+html {
+  font-size: 16px;
+  height: 100%;
+}
+
+body {
+  height: 100%;
+  background: $white;
+  color: $body-color;
+  font-family: "PingFang TC";
+}
+
+.d-none {
+  display: none;
+}
+
+.d-inline {
+  display: inline;
+}
+
+.d-inline-block {
+  display: inline-blockt;
+}
+
+.d-block {
+  display: block;
+}
+
+.d-flex {
+  display: flex;
+}
+
+.flex-column {
+  flex-direction: column;
+}
+
+.justify-content-start {
+  justify-content: flex-start;
+}
+
+.justify-content-end {
+  justify-content: flex-end;
+}
+
+.justify-content-center {
+  justify-content: center;
+}
+
+.justify-content-between {
+  justify-content: space-between;
+}
+
+.justify-content-around {
+  justify-content: space-around;
+}
+
+.align-content-start {
+  align-content: flex-start;
+}
+
+.align-content-end {
+  align-content: flex-end;
+}
+
+.align-content-center {
+  align-content: center;
+}
+
+.align-items-start {
+  align-items: flex-start;
+}
+
+.align-items-end {
+  align-items: flex-end;
+}
+
+.align-items-center {
+  align-items: center;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.scrollbar {
+  padding-left: 6px;
+
+  &::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    border-radius: 3px;
+    background-color: rgba(0, 0, 0, 0.1);
+  }
+}
+
+// main content
+#main-content {
+  height: 100%;
+  padding: 15px;
+}
+
+// stepper
+h1 {
+  font-size: 24px;
+}
+
+.stepper-panel {
+  height: 80px;
+
+  .stepper-container {
+    display: flex;
+    padding-top: 20px;
+  }
+
+  .step {
+    flex: 1;
+    text-align: center;
+    line-height: 1.9;
+    font-size: 16px;
+    @include getStepNums(3);
+    position: relative;
+    .circle-container {
+      height: 32px;
+      width: 32px;
+      // background-color: $light-gray;
+      border-radius: 50%;
+      border: 1px solid $light-gray;
+      color: $light-gray;
+      margin: 0 auto;
+    }
+    &.checked .circle-container::after {
+      content: '\2714';
+    }
+
+    &.checked,
+    &.active {
+      .circle-container {
+        background-color: $black;
+        color: $white;
+      }
+    }
+    .connect-line {
+      position: absolute;
+      top: 16px;
+      right: calc(50% + 30px);
+      left: calc(-50% + 30px);
+      display: block;
+      height: 1px;
+      background-color: $pale-gray;
+    }
+  }
+}
+
+// form
+.form-panel {
+  .form-container {
+    height: 100%;
+    form {
+      outline: 1px solid red;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+
+      .form-content {
+      outline: 1px solid red;
+        flex: 1;        
+      }
+    }
+  }
+}
+
+form {
+  .form-row {
+    margin-bottom: 20px;
+
+    >label {
+      display: block;
+      margin-bottom: 6px;
+      font-weight: 700;
+      font-size: 12px;
+      color: $font-color;
+    }
+
+    input {
+      @extend %input-style;
+
+      &[type="checkbox"],
+      &[type="radio"] {
+        cursor: pointer;
+
+        ~label {
+          display: inline-block;
+          font-weight: 700;
+          margin: 0;
+          cursor: pointer;
+        }
+      }
+
+      &[type="radio"] {
+        -webkit-appearance: none;
+        border-radius: 50%;
+
+        &:checked {
+          box-shadow: inset 0 0 0 5px $black;
+        }
+
+        ~label {
+          margin-right: 20px;
+        }
+      }
+
+      &[type="number"] {
+        width: 60px;
+      }
+    }
+
+    .select-wrapper {
+      position: relative;
+      width: 130px;
+      z-index: 0;
+
+      &::after {
+        // content: '\25BE';
+        content: "";
+        border-style: solid;
+        border-width: 6px 5px 0 5px;
+        border-color: $light-gray transparent transparent transparent;
+        position: absolute;
+        top: 50%;
+        right: 8px;
+        transform: translatey(-50%);
+        z-index: -1;
+      }
+    }
+
+    select {
+      @extend %input-style;
+      -webkit-appearance: none;
+      cursor: pointer;
+      width: 100%;
+      background-color: transparent;
+
+      &:invalid {
+        color: #747474;
+      }
+    }
+  }
+}
