@@ -358,14 +358,50 @@ h1 {
   .form-container {
     height: 100%;
     form {
-      outline: 1px solid red;
       height: 100%;
       display: flex;
       flex-direction: column;
 
       .form-content {
-      outline: 1px solid red;
-        flex: 1;        
+        flex: 1;   
+        .grid-container {
+          display: grid;
+          grid-template-columns: repeat(4, 1fr);
+          grid-template-rows: repeat(5, 1fr);
+          grid-template-areas: 
+          "title name name name"
+          "phone phone phone phone"
+          "email email email email"
+          "country country country country"
+          "address address address address"
+          ;
+          column-gap: 30px;
+          margin-top: 24px;
+          .form-row {
+            > input {
+              width: 100%;
+            }
+            &:nth-child(1) {
+              grid-area: title;
+            }
+            &:nth-child(2) {
+              grid-area: name;
+            }
+            &:nth-child(3) {
+              grid-area: phone;
+            }
+            &:nth-child(4) {
+              grid-area: email;
+            }
+            &:nth-child(5) {
+              grid-area: country;
+            }
+            &:nth-child(6) {
+              grid-area: address;
+            }
+          }
+          
+        }
       }
     }
   }
@@ -418,7 +454,7 @@ form {
 
     .select-wrapper {
       position: relative;
-      width: 130px;
+      width: 100%;
       z-index: 0;
 
       &::after {
@@ -440,11 +476,15 @@ form {
       -webkit-appearance: none;
       cursor: pointer;
       width: 100%;
+      min-width: 100px;
       background-color: transparent;
 
       &:invalid {
         color: #747474;
       }
+
     }
   }
 }
+
+
