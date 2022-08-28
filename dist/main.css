@@ -772,6 +772,7 @@ body {
 }
 
 #main-content {
+  outline: 1px solid red;
   height: 100%;
   padding: 15px;
 }
@@ -836,38 +837,58 @@ h1 {
   display: flex;
   flex-direction: column;
 }
-.form-panel .form-container form .form-content {
+.form-panel .form-container .form-content {
   flex: 1;
 }
-.form-panel .form-container form .form-content .grid-container {
+.form-panel .form-container .form-content .grid-container {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: repeat(5, 1fr);
-  grid-template-areas: "title name name name" "phone phone phone phone" "email email email email" "country country country country" "address address address address";
+  grid-template-rows: repeat(auto, 1fr);
   -moz-column-gap: 30px;
        column-gap: 30px;
   margin-top: 24px;
 }
-.form-panel .form-container form .form-content .grid-container .form-row > input {
+.form-panel .form-container .form-content .step1-grid {
+  grid-template-areas: "title name name name" "phone phone phone phone" "email email email email" "country country country country" "address address address address";
+}
+.form-panel .form-container .form-content .step1-grid .form-row > input {
   width: 100%;
 }
-.form-panel .form-container form .form-content .grid-container .form-row:nth-child(1) {
+.form-panel .form-container .form-content .step1-grid .form-row:nth-child(1) {
   grid-area: title;
 }
-.form-panel .form-container form .form-content .grid-container .form-row:nth-child(2) {
+.form-panel .form-container .form-content .step1-grid .form-row:nth-child(2) {
   grid-area: name;
 }
-.form-panel .form-container form .form-content .grid-container .form-row:nth-child(3) {
+.form-panel .form-container .form-content .step1-grid .form-row:nth-child(3) {
   grid-area: phone;
 }
-.form-panel .form-container form .form-content .grid-container .form-row:nth-child(4) {
+.form-panel .form-container .form-content .step1-grid .form-row:nth-child(4) {
   grid-area: email;
 }
-.form-panel .form-container form .form-content .grid-container .form-row:nth-child(5) {
+.form-panel .form-container .form-content .step1-grid .form-row:nth-child(5) {
   grid-area: country;
 }
-.form-panel .form-container form .form-content .grid-container .form-row:nth-child(6) {
+.form-panel .form-container .form-content .step1-grid .form-row:nth-child(6) {
   grid-area: address;
+}
+.form-panel .form-container .form-content .step3-grid {
+  grid-template-areas: "name name name name" "num num num num" "expire expire cvc cvc";
+}
+.form-panel .form-container .form-content .step3-grid .form-row > input {
+  width: 100%;
+}
+.form-panel .form-container .form-content .step3-grid .form-row:nth-child(1) {
+  grid-area: name;
+}
+.form-panel .form-container .form-content .step3-grid .form-row:nth-child(2) {
+  grid-area: num;
+}
+.form-panel .form-container .form-content .step3-grid .form-row:nth-child(3) {
+  grid-area: expire;
+}
+.form-panel .form-container .form-content .step3-grid .form-row:nth-child(4) {
+  grid-area: cvc;
 }
 
 form .form-row {
@@ -950,4 +971,72 @@ form .form-row .delivery p.price {
   right: 20px;
   font-size: 12px;
   line-height: 16px;
+}
+
+.cart-container {
+  height: 100%;
+}
+.cart-container .cart-wrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 16px;
+  border: 1px solid #F0F0F5;
+  border-radius: 8px;
+}
+.cart-container .cart {
+  display: flex;
+  flex-direction: column;
+  row-gap: 18px;
+}
+.cart-container .cart-item {
+  display: flex;
+}
+.cart-container .cart-item img {
+  width: 100px;
+  height: 100px;
+}
+.cart-container .cart-item .product-info {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  justify-content: space-between;
+}
+.cart-container .cart-item .amount-controller {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100px;
+}
+.cart-container .cart-item .amount-controller .amount-number {
+  font-size: 14px;
+}
+.cart-container .cart-item .amount-controller .circle {
+  height: 24px;
+  width: 24px;
+  background-color: #F0F0F5;
+  border-radius: 50%;
+  color: #4a4a4a;
+  text-align: center;
+  line-height: 1.15;
+  font-weight: 700;
+  font-size: 20px;
+  cursor: pointer;
+}
+.cart-container .cart-item .price {
+  font-weight: 700;
+}
+.cart-container .freight,
+.cart-container .total {
+  height: 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  border-top: 1px solid #F0F0F5;
+  margin-top: 16px;
+}
+.cart-container .freight p,
+.cart-container .total p {
+  font-weight: 700;
 }/*# sourceMappingURL=main.css.map */

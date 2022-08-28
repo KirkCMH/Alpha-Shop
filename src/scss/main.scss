@@ -297,6 +297,7 @@ body {
 
 // main content
 #main-content {
+  outline: 1px solid red;
   height: 100%;
   padding: 15px;
 }
@@ -321,6 +322,7 @@ h1 {
     font-size: 16px;
     @include getStepNums(3);
     position: relative;
+
     .circle-container {
       height: 32px;
       width: 32px;
@@ -330,6 +332,7 @@ h1 {
       color: $light-gray;
       margin: 0 auto;
     }
+
     &.checked .circle-container::after {
       content: '\2714';
     }
@@ -341,6 +344,7 @@ h1 {
         color: $white;
       }
     }
+
     .connect-line {
       position: absolute;
       top: 16px;
@@ -357,48 +361,90 @@ h1 {
 .form-panel {
   .form-container {
     height: 100%;
+
     form {
       height: 100%;
       display: flex;
       flex-direction: column;
+    }
 
-      .form-content {
-        flex: 1;   
-        .grid-container {
-          display: grid;
-          grid-template-columns: repeat(4, 1fr);
-          grid-template-rows: repeat(5, 1fr);
-          grid-template-areas: 
+    .form-content {
+      flex: 1;
+
+      .grid-container {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(auto, 1fr);
+        column-gap: 30px;
+        margin-top: 24px;
+      }
+
+      .step1-grid {
+        grid-template-areas:
           "title name name name"
           "phone phone phone phone"
           "email email email email"
           "country country country country"
           "address address address address"
-          ;
-          column-gap: 30px;
-          margin-top: 24px;
-          .form-row {
-            > input {
-              width: 100%;
-            }
-            &:nth-child(1) {
-              grid-area: title;
-            }
-            &:nth-child(2) {
-              grid-area: name;
-            }
-            &:nth-child(3) {
-              grid-area: phone;
-            }
-            &:nth-child(4) {
-              grid-area: email;
-            }
-            &:nth-child(5) {
-              grid-area: country;
-            }
-            &:nth-child(6) {
-              grid-area: address;
-            }
+        ;
+
+        .form-row {
+          >input {
+            width: 100%;
+          }
+
+          &:nth-child(1) {
+            grid-area: title;
+          }
+
+          &:nth-child(2) {
+            grid-area: name;
+          }
+
+          &:nth-child(3) {
+            grid-area: phone;
+          }
+
+          &:nth-child(4) {
+            grid-area: email;
+          }
+
+          &:nth-child(5) {
+            grid-area: country;
+          }
+
+          &:nth-child(6) {
+            grid-area: address;
+          }
+        }
+      }
+
+      .step3-grid {
+        grid-template-areas:
+          "name name name name"
+          "num num num num"
+          "expire expire cvc cvc"
+        ;
+
+        .form-row {
+          >input {
+            width: 100%;
+          }
+
+          &:nth-child(1) {
+            grid-area: name;
+          }
+
+          &:nth-child(2) {
+            grid-area: num;
+          }
+
+          &:nth-child(3) {
+            grid-area: expire;
+          }
+
+          &:nth-child(4) {
+            grid-area: cvc;
           }
         }
       }
@@ -491,14 +537,14 @@ form {
       padding: 11px 20px;
       cursor: pointer;
 
-      > label {
+      >label {
         padding-left: 20px;
         // outline: 1px solid red;
         font-size: 14px;
         width: 100%;
       }
 
-      p.work-day{
+      p.work-day {
         margin-top: 2px;
       }
 
@@ -513,4 +559,82 @@ form {
   }
 }
 
+// shopping cart
 
+.cart-container {
+  height: 100%;
+
+  .cart-wrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 16px;
+    border: 1px solid $pale-gray;
+    border-radius: 8px;
+  }
+
+  .cart {
+    display: flex;
+    flex-direction: column;
+    row-gap: 18px;
+  }
+
+  .cart-item {
+    display: flex;
+
+    img {
+      width: 100px;
+      height: 100px;
+    }
+
+    .product-info {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: end;
+      justify-content: space-between;
+    }
+
+    .amount-controller {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100px;
+
+      .amount-number {
+        font-size: 14px;
+      }
+
+      .circle {
+        height: 24px;
+        width: 24px;
+        background-color: $pale-gray;
+        border-radius: 50%;
+        color: $dark-gray;
+        text-align: center;
+        line-height: 1.15;
+        font-weight: 700;
+        font-size: 20px;
+        cursor: pointer;
+      }
+    }
+
+    .price {
+      font-weight: 700;
+    }
+  }
+
+  .freight,
+  .total {
+    height: 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    border-top: 1px solid $pale-gray;
+    margin-top: 16px;
+
+    p {
+      font-weight: 700;
+    }
+  }
+}
