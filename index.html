@@ -82,7 +82,7 @@
                 </div>
               </div>
 
-              <div class="part">
+              <div class="part d-none">
                 <div class="form-row ">
                   <h1>運送方式</h1>
                   <div class="d-flex flex-column">
@@ -105,7 +105,7 @@
                 </div>
               </div>
 
-              <div class="part">
+              <div class="part d-none">
                 <h1>付款資訊</h1>
                 <div class="grid-container step3-grid">
                   <div class="form-row">
@@ -130,13 +130,13 @@
 
             <div id="cart-panel">
               <div class="container cart-container">
-                <div class="cart-wrapper">
-                  <div class="cart">
+                <div class="cart-wrapper d-flex flex-column">
+                  <div class="cart d-flex flex-column">
                     <div class="cart-item">
                       <div class="product-img"><img src="/src/img/fit_jeans.png" alt="JEANS"></div>
-                      <div class="product-info">
+                      <div class="product-info d-flex flex-column align-items-end justify-content-between w-100">
                         <h5>破壞補丁修身牛仔褲</h5>
-                        <div class="amount-controller">
+                        <div class="amount-controller d-flex align-items-center justify-content-between">
                           <div class="circle">-</div>
                           <p class="amount-number">1</p>
                           <div class="circle">+</div>
@@ -147,9 +147,9 @@
 
                     <div class="cart-item">
                       <div class="product-img"><img src="/src/img/straight_jeans.png" alt="JEANS"></div>
-                      <div class="product-info">
+                      <div class="product-info d-flex flex-column align-items-end justify-content-between w-100">
                         <h5>刷色直筒牛仔褲</h5>
-                        <div class="amount-controller">
+                        <div class="amount-controller d-flex align-items-center justify-content-between">
                           <div class="circle">-</div>
                           <p class="amount-number">1</p>
                           <div class="circle">+</div>
@@ -159,11 +159,11 @@
                     </div>
                   </div>
 
-                  <div class="freight">
+                  <div class="freight d-flex justify-content-between align-items-end">
                     <span>運費</span>
                     <p>免費</p>
                   </div>
-                  <div class="total">
+                  <div class="total d-flex justify-content-between align-items-end">
                     <span>小計</span>
                     <p>$5,298</p>
                   </div>
@@ -171,9 +171,9 @@
               </div>
             </div>
 
-            <div id="btn-control" class="control-panel d-flex justify-content-end">
-              <button class="btn">上一步</button>
-              <button class="btn btn-primary">下一步</button>
+            <div id="btn-control" class="control-panel d-flex justify-content-between">
+              <button class="btn btn-bare d-none">上一步</button>
+              <button class="btn btn-primary w-100">下一步</button>
             </div>
           </form>
         </div>
