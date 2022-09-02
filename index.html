@@ -11,9 +11,30 @@
 
 <body>
   <header>
-    <nav>
-
-    </nav>
+    <input type="checkbox" class="navbar-toggle" id="navbar-toggle">
+    <label for="navbar-toggle" class="navbar-toggle-label">
+      <span class="hamburger"></span>
+    </label>
+    <div class="nav-container">
+      <nav class="nav">
+        <ul class="nav-list">
+          <li class="nav-item"><a class="nav-link" href="#">男款</a> </li>
+          <li class="nav-item"><a class="nav-link" href="#">女款</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">最新消息</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">客製商品</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">聯絡我們</a></li>
+        </ul>
+        <div class="icons">
+          <a href="#" class="icon"><img src="/src/img/icon1@2.png" alt=""></a>
+          <a href="#" class="icon"><img src="/src/img/icon2@2.png" alt=""></a>
+          <a href="#" class="icon"><img src="/src/img/icon3@2.png" alt=""></a>
+        </div>
+      </nav>    
+      <a href="#" class="nav-brand">
+        <img src="/src/img/Logo@2.png" alt="ALPHA SHOP">
+      </a>   
+    </div>
+   
   </header>
   <main id="main-content">
     <section class="stepper">
@@ -22,14 +43,20 @@
         <div class="container stepper-container">
           <div class="step active">
             <div class="circle-container"></div>
+            <div class="label-container d-none">寄送地址</div>
+
           </div>
           <div class="step">
             <div class="circle-container"></div>
             <span class="connect-line"></span>
+            <div class="label-container d-none">運送方式</div>
+
           </div>
           <div class="step">
             <div class="circle-container"></div>
             <span class="connect-line"></span>
+            <div class="label-container d-none">付款資訊</div>
+
           </div>
         </div>
       </div>
@@ -81,7 +108,6 @@
                   </div>
                 </div>
               </div>
-
               <div class="part d-none">
                 <div class="form-row ">
                   <h1>運送方式</h1>
@@ -104,7 +130,6 @@
                   </div>
                 </div>
               </div>
-
               <div class="part d-none">
                 <h1>付款資訊</h1>
                 <div class="grid-container step3-grid">
@@ -127,59 +152,62 @@
                 </div>
               </div>
             </div>
-
-            <div id="cart-panel">
-              <div class="container cart-container">
-                <div class="cart-wrapper d-flex flex-column">
-                  <div class="cart d-flex flex-column">
-                    <div class="cart-item first">
-                      <div class="product-img"><img src="/src/img/fit_jeans.png" alt="JEANS"></div>
-                      <div class="product-info d-flex flex-column align-items-end justify-content-between w-100">
-                        <h5>破壞補丁修身牛仔褲</h5>
-                        <div class="amount-controller d-flex align-items-center justify-content-between">
-                          <div class="circle">-</div>
-                          <p class="amount-number">1</p>
-                          <div class="circle">+</div>
-                        </div>
-                        <p class="price">$3,999</p>
-                      </div>
-                    </div>
-
-                    <div class="cart-item second">
-                      <div class="product-img"><img src="/src/img/straight_jeans.png" alt="JEANS"></div>
-                      <div class="product-info d-flex flex-column align-items-end justify-content-between w-100">
-                        <h5>刷色直筒牛仔褲</h5>
-                        <div class="amount-controller d-flex align-items-center justify-content-between">
-                          <div class="circle">-</div>
-                          <p class="amount-number">1</p>
-                          <div class="circle">+</div>
-                        </div>
-                        <p class="price">$1,299</p>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="freight d-flex justify-content-between align-items-end">
-                    <span>運費</span>
-                    <p>免費</p>
-                  </div>
-                  <div class="total d-flex justify-content-between align-items-end" id="total">
-                    <span>小計</span>
-                    <p>$5,298</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div id="btn-control" class="control-panel d-flex justify-content-between">
-              <button class="btn btn-bare d-none">上一步</button>
-              <button class="btn btn-primary w-100">下一步</button>
-            </div>
           </form>
         </div>
       </div>
     </section>
+    <section class="cart-section">
+      <div id="cart-panel">
+        <div class="container cart-container">
+          <div class="cart-wrapper d-flex flex-column">
+            <div class="cart d-flex flex-column">
+              <div class="cart-header">
+                <p class="header d-none">購物籃</p>
+              </div>
+              <div class="cart-item first">
+                <div class="product-img"><img src="/src/img/fit_jeans.png" alt="JEANS"></div>
+                <div class="product-info d-flex flex-column align-items-end justify-content-between w-100">
+                  <h5>破壞補丁修身牛仔褲</h5>
+                  <div class="amount-controller d-flex align-items-center justify-content-between">
+                    <div class="circle">-</div>
+                    <p class="amount-number">1</p>
+                    <div class="circle">+</div>
+                  </div>
+                  <p class="price">$3,999</p>
+                </div>
+              </div>
 
+              <div class="cart-item second">
+                <div class="product-img"><img src="/src/img/straight_jeans.png" alt="JEANS"></div>
+                <div class="product-info d-flex flex-column align-items-end justify-content-between w-100">
+                  <h5>刷色直筒牛仔褲</h5>
+                  <div class="amount-controller d-flex align-items-center justify-content-between">
+                    <div class="circle">-</div>
+                    <p class="amount-number">1</p>
+                    <div class="circle">+</div>
+                  </div>
+                  <p class="price">$1,299</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="freight d-flex justify-content-between align-items-end">
+              <span>運費</span>
+              <p>免費</p>
+            </div>
+            <div class="total d-flex justify-content-between align-items-end" id="total">
+              <span>小計</span>
+              <p>$5,298</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div id="btn-control" class="control-panel d-flex justify-content-between">
+      <button class="btn btn-bare d-none">上一步</button>
+      <button class="btn btn-primary w-100">下一步</button>
+    </div>
   </main>
 
   <footer class="footer-panel hidden">
@@ -190,5 +218,4 @@
 
   <script src="dist/bundle.js"></script>
 </body>
-
 </html>
